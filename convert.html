@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Amount</p>
+    <input type="number" name="" id="nhap" placeholder="Nhập số tiền">
+    <p>From Currenncy</p>
+    <select name="" id="from">
+        <option value="vie">Việt Nam (VND)</option>
+        <option value="usa">Mỹ (USD)</option>
+    </select>
+    <p>To Currenncy</p>
+    <select name="" id="to">
+        <option value="viet">Việt Nam (VND)</option>
+        <option value="usa">Mỹ (USD)</option>
+    </select>
+    <br>
+    <br>
+    <button onclick="getConvert()">Convert</button>
+    <p id="Amount"></p>
+    <script>
+         function getConvert(){
+            let amount = document.getElementById("nhap").value;
+            let from = document.getElementById("from").value;
+            let to = document.getElementById("to").value;
+            let result;
+            if (from === "vie" && to === "usa") {
+                result = "Số tiền là: " + (amount / 23000) + "$";
+            }
+            else if (from === "usa" && to === "viet") {
+                result = "Số tiền là: " + (amount * 23000) + "Đ";
+            }
+            document.getElementById("Amount").innerHTML = result;
+        }
+    </script>
+</body>
+</html>
